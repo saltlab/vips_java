@@ -287,7 +287,7 @@ public class VipsParser {
 	/**
 	 * Checks, if node is a text node.
 	 * 
-	 * @param node
+	 * @param box
 	 *            Input node
 	 * 
 	 * @return True, if node is a text node, otherwise false.
@@ -1249,7 +1249,6 @@ public class VipsParser {
 	 * Finds previous sibling node's VIPS block.
 	 * @param node Node
 	 * @param vipsBlock Actual VIPS block
-	 * @param foundBlock VIPS block for given node
 	 */
 	private void findPreviousSiblingNodeVipsBlock(Node node, VipsBlock vipsBlock)
 	{

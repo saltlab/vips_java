@@ -32,9 +32,9 @@ public class VipsTester {
 		{
 			Vips vips = new Vips();
 			// disable graphics output
-			vips.enableGraphicsOutput(false);
+			vips.enableGraphicsOutput(true);
 			// disable output to separate folder (no necessary, it's default value is false)
-			vips.enableOutputToFolder(false);
+			vips.enableOutputToFolder(true);
 			// set permitted degree of coherence
 			vips.setPredefinedDoC(8);
 			// start segmentation on page

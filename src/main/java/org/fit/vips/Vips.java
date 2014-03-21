@@ -22,7 +22,10 @@ import javax.imageio.ImageIO;
 
 import org.fit.cssbox.css.CSSNorm;
 import org.fit.cssbox.css.DOMAnalyzer;
-import org.fit.cssbox.demo.DOMSource;
+import org.fit.cssbox.io.DOMSource;
+import org.fit.cssbox.io.DefaultDOMSource;
+import org.fit.cssbox.io.DefaultDocumentSource;
+import org.fit.cssbox.io.DocumentSource;
 import org.fit.cssbox.layout.BrowserCanvas;
 import org.fit.cssbox.layout.Viewport;
 import org.w3c.dom.Document;
@@ -123,11 +126,11 @@ public class Vips {
 
 	/**
 	 * Parses a builds DOM tree from page source.
-	 * @param urlStream Input stream with page source.
-	 */
-	private void getDomTree(InputStream urlStream)
-	{
-		DOMSource parser = new DOMSource(urlStream);
+     * @param url Input stream with page source.
+     */
+	private void getDomTree(URL url) throws IOException {
+        DocumentSource docSource = new DefaultDocumentSource(url);
+		DOMSource parser = new DefaultDOMSource(docSource);
 		try
 		{
 			Document domTree = parser.parse();
@@ -346,12 +349,12 @@ public class Vips {
 	{
 		try
 		{
-			URLConnection urlConnection = _url.openConnection();
-			InputStream urlStream = urlConnection.getInputStream();
+			//URLConnection urlConnection = _url.openConnection();
+			//InputStream urlStream = urlConnection.getInputStream();
 
 			redirectOut();
 
-			getDomTree(urlStream);
+			getDomTree(_url);
 			startTime = System.nanoTime();
 			getViewport();
 			restoreOut();
@@ -381,7 +384,7 @@ public class Vips {
 			if (_outputToFolder)
 				System.setProperty("user.dir", oldWorkingDirectory);
 
-			urlStream.close();
+			//urlStream.close();
 		}
 		catch (Exception e)
 		{

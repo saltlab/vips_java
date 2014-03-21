@@ -618,7 +618,6 @@ public class VipsSeparatorGraphicsDetector extends JPanel implements VipsSeparat
 	/**
 	 * Finds elements that are overlapped with horizontal separator.
 	 * @param separator Separator, that we look at
-	 * @param vipsBlock Visual block corresponding to element
 	 * @param result Elements, that we found
 	 */
 	private void findHorizontalOverlappedElements(Separator separator, List<VipsBlock> result)
@@ -652,7 +651,6 @@ public class VipsSeparatorGraphicsDetector extends JPanel implements VipsSeparat
 	/**
 	 * Finds elements that are overlapped with vertical separator.
 	 * @param separator Separator, that we look at
-	 * @param vipsBlock Visual block corresponding to element
 	 * @param result Elements, that we found
 	 */
 	private void findVerticalOverlappedElements(Separator separator, List<VipsBlock> result)
@@ -722,7 +720,6 @@ public class VipsSeparatorGraphicsDetector extends JPanel implements VipsSeparat
 	/**
 	 * Finds elements that are adjacent to horizontal separator.
 	 * @param separator Separator, that we look at
-	 * @param vipsBlock Visual block corresponding to element
 	 * @param resultTop Elements, that we found on top side of separator
 	 * @param resultBottom Elements, that we found on bottom side side of separator
 	 */
@@ -750,7 +747,6 @@ public class VipsSeparatorGraphicsDetector extends JPanel implements VipsSeparat
 	/**
 	 * Finds elements that are adjacent to vertical separator.
 	 * @param separator Separator, that we look at
-	 * @param vipsBlock Visual block corresponding to element
 	 * @param resultLeft Elements, that we found on left side of separator
 	 * @param resultRight Elements, that we found on right side side of separator
 	 */
